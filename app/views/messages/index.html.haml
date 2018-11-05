@@ -1,0 +1,37 @@
+#header-top  チャットグループが作成されました
+.wrapper
+  .side-bar
+    .header
+      %h2
+        %b  ユーザ名
+        %a.new_group <i class="fas fa-cog"></i>
+        %a.edit_account <i class="fas fa-edit"></i>
+
+    .content
+      %ul
+        %li.group-name  グループ名
+        %li.message-text  メッセージ表示
+      %ul
+        %li.group-name  グループ名
+        %li.message-text  メッセージ表示
+  .main-bar
+    .main-bar__header
+      %h3.group_name  グループ名
+      %p.members  Members: メンバー名
+      %a.edit_btn{:href => "", :title => "edit_btn"}  Edit
+    .main-bar__content
+      .messages
+        %ul.message
+          %li.user
+            %b  投稿者名
+          %li.time  投稿日時
+          %li.text  メッセージ
+        %ul.message
+          %li.user
+            %b  投稿者名
+          %li.time  投稿日時
+          %li.text  sample message sample message sample message
+    .main-bar__footer
+      %textarea{:col => "30", :rows => "10", :name => "text", :placeholder => "type a message"}
+      %a <i class="far fa-image"></i>
+      %input{:type => "submit", :value => "send"}
