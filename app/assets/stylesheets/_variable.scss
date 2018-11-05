@@ -133,14 +133,19 @@ html, body {
       line-height: 50px;
       border-style: none;
       position: relative;
-      a {
-        font-size: 30px;
-        display: inline-block;
-        position: absolute;
-        right: 300px;
-        bottom: 200px; //iconの位置の指定が出来ない。textarea内に表示しようとすると、iconではなくurlが表示されてしまう。
     }
-  }
+    .picture_area {
+      display: inline-block;
+      position: absolute;
+      right: 170px;
+      bottom: 30px;
+
+      .fa {
+        font-size: 16px;
+        display: inline-block;
+      }
+    }
+
     input {
       height: 50px;
       width: 100px;

@@ -33,5 +33,8 @@
           %li.text  sample message sample message sample message
     .main-bar__footer
       %textarea{:col => "30", :rows => "10", :name => "text", :placeholder => "type a message"}
-      %a <i class="far fa-image"></i>
+      .picture_area
+        %i.fa.fa-picture-o.icon
+      / / %a <i class="far fa-image"></i>
+      / %i.fa.fa-image= file_field_tag :image, id: “upload-icon”
       %input{:type => "submit", :value => "send"}
