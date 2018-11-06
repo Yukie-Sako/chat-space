@@ -1,0 +1,175 @@
+html, body {
+  height: 100%;
+}
+
+#header-top {
+  font-size: 16px;
+  color: white;
+  background-color: #38AEF0;
+  text-align: center;
+  height: 22px;
+}
+
+.side-bar {
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+  float: left;
+
+  &__header {
+      height: 100px;
+      clear: both;
+    &__h3 {
+      font-size: 16px;
+      line-height: 100px;
+      color: #FFFFFF;
+      padding-left: 20px;
+      position: relative;
+      &__user_name {
+        display: inline;
+      }
+      &__ul {
+       height: 30px;
+       width: 100px;
+       display: inline-block;
+       position: absolute;
+       right: 0;
+       bottom: 30px;
+
+        .cog_icon {
+          color: #fff;
+          display: inline;
+          height: 16px;
+          font-size: 16px;
+          float:right;
+          padding-right: 20px;
+        }
+        .edit_icon {
+          color: #fff;
+          display: inline;
+          height: 16px;
+          font-size: 16px;
+          float:right;
+          padding-right: 5px;
+        }
+     }
+    }
+  }
+  &__content {
+     background-color: #2f3e51;
+     width: 300px;
+     height: calc(100vh - 100px);
+     clear: both;
+    ul {
+      padding: 20px;
+      color: #FFFFFF;
+      li.group-name {
+        font-size: 15px;
+       }
+      li.message-text {
+        font-size: 11px;
+      }
+    }
+  }
+}
+.main-bar {
+  background-color: #AAAAAA;
+  width: calc(100% - 300px);
+  height: 100vh;
+  float: right;
+
+  &__header {
+   background-color: white;
+   border-bottom: 1px solid #eeeeee;
+   height: 100px;
+   position: relative;
+    &__h3.group_name {
+      font-size: 20px;
+      color: #333333;
+      padding: 35px 40px 15px 40px;
+      display: inline-block;
+      width: 700px;
+    }
+    &__members {
+      font-size: 12px;
+      color: #999999;
+      padding: 0 0 15px 40px;
+      display: block;
+      width: 700px;
+    }
+    .btn {
+      position: absolute;
+      right: 40px;
+      top: 28px;
+      display: inline-block;
+      color: #38AEF0;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px 0 20px;
+      background-color: white;
+      border: 2px solid #38AEF0;
+      text-decoration: none;
+    }
+  }
+  &__content {
+      height: calc(100vh - 190px);
+      background-color: #F5F5F5;
+      position: relative;
+      li.user {
+        font-size: 16px;
+        color: #434A54;
+        display: inline-block;
+        padding: 46px 10px 0px 40px;
+      }
+      li.time {
+        font-size: 12px;
+        color: #999999;
+        display: inline-block;
+      }
+      li.text {
+        font-size: 14px;
+        color: #434A54;
+        padding: 10px 0 40px 40px;
+      }
+  }
+
+  &__footer {
+      height: 90px;
+      width: calc(100% - 300px);
+      background-color: #D3D3D3;
+      position: absolute;
+      bottom: -22px;
+    textarea {
+      width: 650px;
+      height: 50px;
+      margin: 20px 15px 20px 40px;
+      padding: 0 10px 0 10px;
+      font-size: 16px;
+      line-height: 50px;
+      border-style: none;
+      position: relative;
+    }
+    .picture_area {
+      display: inline-block;
+      position: absolute;
+      right: 170px;
+      bottom: 30px;
+
+      .fa {
+        font-size: 16px;
+        display: inline-block;
+      }
+    }
+
+    input {
+      height: 50px;
+      width: 100px;
+      font-size: 16px;
+      background-color: #38AEF0;
+      color: #fff;
+      position: absolute;
+      right: 40px;
+      top: 20px;
+    }
+  }
+}
