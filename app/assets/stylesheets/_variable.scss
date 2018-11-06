@@ -16,31 +16,46 @@ html, body {
   height: 100vh;
   float: left;
 
-  .header {
+  &__header {
       height: 100px;
       clear: both;
-    h2 {
+    &__h3 {
       font-size: 16px;
       line-height: 100px;
       color: #FFFFFF;
       padding-left: 20px;
-    }
-    .new_group {
-      color: #fff;
-      display: inline;
-      font-size: 16px;
-      float:right;
-      padding-right: 20px;
-    }
-    .edit_account {
-      color: #fff;
-      display: inline;
-      font-size: 16px;
-      float:right;
-      padding-right: 5px;
+      position: relative;
+      &__user_name {
+        display: inline;
+      }
+      &__ul {
+       height: 30px;
+       width: 100px;
+       display: inline-block;
+       position: absolute;
+       right: 0;
+       bottom: 30px;
+
+        .cog_icon {
+          color: #fff;
+          display: inline;
+          height: 16px;
+          font-size: 16px;
+          float:right;
+          padding-right: 20px;
+        }
+        .edit_icon {
+          color: #fff;
+          display: inline;
+          height: 16px;
+          font-size: 16px;
+          float:right;
+          padding-right: 5px;
+        }
+     }
     }
   }
-  .content {
+  &__content {
      background-color: #2f3e51;
      width: 300px;
      height: calc(100vh - 100px);
@@ -63,26 +78,26 @@ html, body {
   height: 100vh;
   float: right;
 
-  .main-bar__header {
+  &__header {
    background-color: white;
    border-bottom: 1px solid #eeeeee;
    height: 100px;
    position: relative;
-    .group_name {
+    &__h3.group_name {
       font-size: 20px;
       color: #333333;
       padding: 35px 40px 15px 40px;
       display: inline-block;
       width: 700px;
     }
-    .members {
+    &__members {
       font-size: 12px;
       color: #999999;
       padding: 0 0 15px 40px;
       display: block;
       width: 700px;
     }
-    .edit_btn {
+    .btn {
       position: absolute;
       right: 40px;
       top: 28px;
@@ -92,11 +107,11 @@ html, body {
       line-height: 40px;
       padding: 0 20px 0 20px;
       background-color: white;
-      border: 1px solid #38AEF0;
+      border: 2px solid #38AEF0;
       text-decoration: none;
     }
   }
-  .main-bar__content {
+  &__content {
       height: calc(100vh - 190px);
       background-color: #F5F5F5;
       position: relative;
@@ -118,7 +133,7 @@ html, body {
       }
   }
 
-  .main-bar__footer {
+  &__footer {
       height: 90px;
       width: calc(100% - 300px);
       background-color: #D3D3D3;

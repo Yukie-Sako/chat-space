@@ -1,26 +1,35 @@
 #header-top  チャットグループが作成されました
 .wrapper
   .side-bar
-    .header
-      %h2
-        %b  ユーザ名
-        %a.new_group <i class="fas fa-cog"></i>
-        %a.edit_account <i class="fas fa-edit"></i>
+    .side-bar__header
+      .side-bar__header__h3
+        %b.user_name ユーザ名
+        %ul.side-bar__header__h3__ul
+          %li.list
+            =link_to '/' do
+              =fa_icon 'cog', class: 'cog_icon'
+          %li.list
+            =link_to '/' do
+              =fa_icon 'pencil-square-o', class: 'edit_icon'
 
-    .content
+    .side-bar__content
       %ul
         %li.group-name  グループ名
         %li.message-text  メッセージ表示
       %ul
         %li.group-name  グループ名
         %li.message-text  メッセージ表示
+
   .main-bar
     .main-bar__header
-      %h3.group_name  グループ名
-      %p.members  Members: メンバー名
-      %a.edit_btn{:href => "", :title => "edit_btn"}  Edit
+      .main-bar__header__h3.group_name  グループ名
+      .main-bar__header__members  Members: メンバー名
+      .main-bar__header__right-header
+        .right-header__btn
+          =link_to "Edit", "/", class: "btn"
+
     .main-bar__content
-      .messages
+      .main-bar__content__messages
         %ul.message
           %li.user
             %b  投稿者名
@@ -31,10 +40,9 @@
             %b  投稿者名
           %li.time  投稿日時
           %li.text  sample message sample message sample message
+
     .main-bar__footer
-      %textarea{:col => "30", :rows => "10", :name => "text", :placeholder => "type a message"}
+      %textarea{col: "30", rows: "10", name: "text", placeholder: "type a message"}
       .picture_area
         %i.fa.fa-picture-o.icon
-      / / %a <i class="far fa-image"></i>
-      / %i.fa.fa-image= file_field_tag :image, id: “upload-icon”
-      %input{:type => "submit", :value => "send"}
+      %input{type: "submit", value: "Send"}
