@@ -13,12 +13,7 @@
               =fa_icon 'pencil-square-o', class: 'edit_icon'
 
     .side-bar__content
-      %ul
-        %li.group-name  グループ名
-        %li.message-text  メッセージ表示
-      %ul
-        %li.group-name  グループ名
-        %li.message-text  メッセージ表示
+      = render "messages/group"
 
   .main-bar
     .main-bar__header
@@ -30,16 +25,7 @@
 
     .main-bar__content
       .main-bar__content__messages
-        %ul.message
-          %li.user
-            %b  投稿者名
-          %li.time  投稿日時
-          %li.text  メッセージ
-        %ul.message
-          %li.user
-            %b  投稿者名
-          %li.time  投稿日時
-          %li.text  sample message sample message sample message
+        = render "messages/message"
 
     .main-bar__footer
       %textarea{col: "30", rows: "10", name: "text", placeholder: "type a message"}
