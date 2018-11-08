@@ -1,34 +1,21 @@
 .wrapper
-  .side-bar
-    .side-bar__header
-      .side-bar__header__h3
-        %b.user_name
-          = current_user.name
-        %ul.side-bar__header__h3__ul
-          %li.list
-            =link_to edit_user_path(current_user) do
-              =fa_icon 'cog', class: 'cog_icon'
-          %li.list
-            =link_to new_group_path do
-              =fa_icon 'pencil-square-o', class: 'edit_icon'
 
-    .side-bar__content
-      = render "messages/group"
+  = render "messages/side_bar"
 
-  .main-bar
-    .main-bar__header
-      .main-bar__header__h3.group_name  グループ名
-      .main-bar__header__members  Members: メンバー名
-      .main-bar__header__right-header
-        .right-header__btn
-          =link_to "Edit", "/", class: "btn"
+.main-bar
+  .main-bar__header
+    .main-bar__header__h3.group_name  グループ名
+    .main-bar__header__members  Members: メンバー名
+    .main-bar__header__right-header
+      .right-header__btn
+        =link_to "Edit", "/", class: "btn"
 
-    .main-bar__content
-      .main-bar__content__messages
-        = render "messages/message"
+  .main-bar__content
+    .main-bar__content__messages
+      = render "messages/message"
 
-    .main-bar__footer
-      %textarea{col: "30", rows: "10", name: "text", placeholder: "type a message"}
-      .picture_area
-        %i.fa.fa-picture-o.icon
-      %input{type: "submit", value: "Send"}
+  .main-bar__footer
+    %textarea{col: "30", rows: "10", name: "text", placeholder: "type a message"}
+    .picture_area
+      %i.fa.fa-picture-o.icon
+    %input{type: "submit", value: "Send"}
