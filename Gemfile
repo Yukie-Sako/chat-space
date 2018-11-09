@@ -59,10 +59,9 @@ gem 'rails-i18n', '~> 5.1'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
-
 gem 'devise'
-
-
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 
