@@ -1,3 +1,21 @@
 .wrapper
 
-  = render
+  = render "messages/side_bar"
+
+.main-bar
+  .main-bar__header
+    .main-bar__header__h3.group_name  グループ名
+    .main-bar__header__members  Members: メンバー名
+    .main-bar__header__right-header
+      .right-header__btn
+        =link_to "Edit", "/", class: "btn"
+
+  .main-bar__content
+    .main-bar__content__messages
+      = render "messages/message"
+
+  .main-bar__footer
+    %textarea{col: "30", rows: "10", name: "text", placeholder: "type a message"}
+    .picture_area
+      %i.fa.fa-picture-o.icon
+    %input{type: "submit", value: "Send"}
