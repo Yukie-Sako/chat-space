@@ -1,5 +1,11 @@
 %ul.message
   %li.user
-    %b  投稿者名
-  %li.time  投稿日時
-  %li.text  sample message sample message sample message
+    = message.user.name
+  %li.time
+    = format_posted_time(message.created_at)
+  %li.text
+    - if message.text.present?
+      %p.lower-message__text
+        = message.text
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+

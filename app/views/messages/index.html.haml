@@ -4,18 +4,23 @@
 
 .main-bar
   .main-bar__header
-    .main-bar__header__h3.group_name  グループ名
-    .main-bar__header__members  Members: メンバー名
+    .main-bar__header__h3.group_name
+      = group.name
+    .main-bar__header__members  Members:
+    - members.each do |member|
     .main-bar__header__right-header
       .right-header__btn
-        =link_to "Edit", "/", class: "btn"
+        =link_to "Edit", '/groups/#{@group.id}/edit', class: "btn"
 
   .main-bar__content
     .main-bar__content__messages
-      = render "messages/message"
+      = render @messages
 
   .main-bar__footer
-    %textarea{col: "30", rows: "10", name: "text", placeholder: "type a message"}
-    .picture_area
-      %i.fa.fa-picture-o.icon
-    %input{type: "submit", value: "Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: 'textarea', placeholder: "type a message"
+      .picture_area
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'fa-icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'submit-message'
