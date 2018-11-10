@@ -1,9 +1,9 @@
-%ul.message
-  %li.user
+.message
+  .user
     = message.user.name
-  %li.time
-    = format_posted_time(message.created_at)
-  %li.text
+  .time
+    = message.created_at.to_s(:default)
+  .text
     - if message.text.present?
       %p.lower-message__text
         = message.text
