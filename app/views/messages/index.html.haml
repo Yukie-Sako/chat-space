@@ -5,12 +5,14 @@
 .main-bar
   .main-bar__header
     .main-bar__header__h3.group_name
-      = group.name
-    .main-bar__header__members  Members:
-    - members.each do |member|
-    .main-bar__header__right-header
-      .right-header__btn
-        =link_to "Edit", '/groups/#{@group.id}/edit', class: "btn"
+      = @group.name
+    .main-bar__header__members
+      Members:
+      - @group.users.each do |user|
+        = user.name
+      .main-bar__header__right-header
+        .right-header__btn
+          =link_to "Edit", '/groups/#{@group.id}/edit', class: "btn"
 
   .main-bar__content
     .main-bar__content__messages
