@@ -53,14 +53,19 @@ html, body {
      width: 300px;
      height: calc(100vh - 100px);
      clear: both;
+    .group-message-link {
+        text-decoration: none;
+    }
     ul {
       padding: 20px;
       color: #FFFFFF;
       li.group-name {
         font-size: 15px;
+        text-decoration: none;
        }
       li.message-text {
         font-size: 11px;
+        text-decoration: none;
       }
     }
   }
@@ -108,18 +113,19 @@ html, body {
       height: calc(100vh - 190px);
       background-color: #F5F5F5;
       position: relative;
-      li.user {
+      overflow: scroll;
+      .user {
         font-size: 16px;
         color: #434A54;
         display: inline-block;
         padding: 46px 10px 0px 40px;
       }
-      li.time {
+      .time {
         font-size: 12px;
         color: #999999;
         display: inline-block;
       }
-      li.text {
+      .text {
         font-size: 14px;
         color: #434A54;
         padding: 10px 0 40px 40px;
@@ -132,8 +138,8 @@ html, body {
       background-color: #D3D3D3;
       position: absolute;
       bottom: 0;
-    textarea {
-      width: 650px;
+    .textarea {
+      width: 750px;
       height: 50px;
       margin: 20px 15px 20px 40px;
       padding: 0 10px 0 10px;
@@ -153,8 +159,11 @@ html, body {
         display: inline-block;
       }
     }
+       .hidden {
+        display: none;
+       }
 
-    input {
+    .submit-message {
       height: 50px;
       width: 100px;
       font-size: 16px;
