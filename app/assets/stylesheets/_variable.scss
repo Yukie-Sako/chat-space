@@ -53,6 +53,9 @@ html, body {
      width: 300px;
      height: calc(100vh - 100px);
      clear: both;
+    .group-message-link {
+        text-decoration: none;
+    }
     ul {
       padding: 20px;
       color: #FFFFFF;
