@@ -56,12 +56,17 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'rails-i18n', '~> 5.1'
 
+
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rspec-rails', '~> 3.5'
+gem 'rails-controller-testing'
+gem 'factory_girl_rails', '~> 4.0'
+gem 'faker'
 
 
 
