@@ -12,7 +12,7 @@
         = user.name
       .main-bar__header__right-header
         .right-header__btn
-          =link_to "Edit", '/groups/#{@group.id}/edit', class: "btn"
+          =link_to "Edit", edit_group_path(@group.id), class: "btn"
 
   .main-bar__content
     .main-bar__content__messages
