@@ -44,11 +44,11 @@ $(function (){
     })
     .done(function(data){
       var insertHTML = buildHTML(data);
-      $('.main-bar__content').append(insertHTML)
+      var mainBarContent = $('.main-bar__content')
+      mainBarContent.append(insertHTML)
       $('.main-bar__content__messages').val('')
-      $('.main-bar__content').animate({scrollTop: $('.main-bar__content')[0].scrollHeight},'fast');
+      mainBarContent.animate({scrollTop: mainBarContent[0].scrollHeight},'fast');
       $('#new_message')[0].reset();
-      console.log(data)
     })
     .fail(function(){
       alert('error');
