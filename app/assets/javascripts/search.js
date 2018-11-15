@@ -24,6 +24,8 @@ $(function() {
 
   $('#user-search-field').on('keyup', function(){
     var input = $(this).val();
+    if (input !== ""){
+
 
     $.ajax({
       url: '/users',
@@ -34,6 +36,7 @@ $(function() {
 
     .done(function(users){
       $('#user-search-result').empty();
+      console.log(users.length);
       if (users.length !== 0) {
         users.forEach(function(user){
           appendUser(user);
@@ -46,7 +49,12 @@ $(function() {
     .fail(function(){
       alert('error');
     })
+   }
+   else {
+    $('#user-search-result').empty();
+   }
   });
+//27行目のif文でinputが空欄でない場合にのみajax通信がされるように設定。53行目で空欄の場合は検索結果欄が空白になるように設定。
 
   $(document).on('click', ".chat-group-user__btn--add", function (){
     var id = $(this).data('user-id')
