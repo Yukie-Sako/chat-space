@@ -48,6 +48,7 @@ $(function (){
       mainBarContent.append(insertHTML)
       mainBarContent.animate({scrollTop: mainBarContent[0].scrollHeight},'fast');
       $('#new_message')[0].reset();
+      $('.submit-message').prop("disabled", false);
     })
     .fail(function(){
       alert('error');
