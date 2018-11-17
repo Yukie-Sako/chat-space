@@ -46,9 +46,9 @@ $(function (){
       var insertHTML = buildHTML(data);
       var mainBarContent = $('.main-bar__content')
       mainBarContent.append(insertHTML)
-      $('.main-bar__content__messages').val('')
       mainBarContent.animate({scrollTop: mainBarContent[0].scrollHeight},'fast');
       $('#new_message')[0].reset();
+      $('.submit-message').prop("disabled", false);
     })
     .fail(function(){
       alert('error');
