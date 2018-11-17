@@ -17,6 +17,7 @@ $(function() {
     `<div class="chat-group-user clearfix">
       <p class="chat-group-user__name">${ name }</p>
       <a class="user-search-add chat-group-user__btn chat-group-user__btn--remove" data-user-id="${ id }" data-user-name="${ name }">削除</a>
+      <input value = "${id}", name = "group[user_ids][]", type = "hidden" />
      </div>`
    return html;
   }
@@ -36,7 +37,6 @@ $(function() {
 
     .done(function(users){
       $('#user-search-result').empty();
-      console.log(users.length);
       if (users.length !== 0) {
         users.forEach(function(user){
           appendUser(user);
