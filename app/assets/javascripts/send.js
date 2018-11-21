@@ -2,7 +2,7 @@ $(function (){
   function buildHTML(message) {
     if (message.text && message.image) {
     var html =
-      `<div class="message">
+      `<div class="message" data-message-id="${ message.id }">
         <div class="user">${ message.user }</div>
         <div class="time">${ message.time }</div>
         <div class="text">
@@ -12,7 +12,7 @@ $(function (){
       </div>`
 
   } else if (message.text) {
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${ message.id }">
         <div class="user">${ message.user }</div>
         <div class="time">${ message.time }</div>
         <div class="text">
@@ -21,7 +21,7 @@ $(function (){
       </div>`
 
   } else if (message.image) {
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${ message.id }">
         <div class="user">${ message.user }</div>
         <div class="time">${ message.time }</div>
         <img class="lower-message__image" src="${ message.image }">
@@ -44,7 +44,8 @@ $(function (){
     })
     .done(function(data){
       var insertHTML = buildHTML(data);
-      var mainBarContent = $('.main-bar__content')
+      console.log(data);
+      var mainBarContent = $('.main-bar__content__messages')
       mainBarContent.append(insertHTML)
       mainBarContent.animate({scrollTop: mainBarContent[0].scrollHeight},'fast');
       $('#new_message')[0].reset();
@@ -54,4 +55,47 @@ $(function (){
       alert('error');
     })
   })
-})
+
+  $(function(){
+    setInterval(updateMessage, 5000);
+  })
+
+    if(location.pathname.match(/\/groups\/\d+\/messages/)) {
+      console.log("aaa")
+     var updateMessage = function (){
+        if ($('.message')[0]) {
+          var message_id = $('.message:last').data('message-id');
+        } else {
+          var message_id = 0
+        }
+
+        $.ajax({
+          url: location.href,
+          type: 'GET',
+          data: { id: message_id },
+          dataType: 'json'
+        })
+
+        .done(function(data){
+
+          console.log(data);
+          console.log(message_id);
+
+          var insertHTML = "";
+            data.forEach(function(message){
+            insertHTML += buildHTML(message);
+            $('.main-bar__content__messages').append(insertHTML);
+            });
+            var mainBarContent = $('.main-bar__content')
+            mainBarContent.animate({scrollTop: mainBarContent[0].scrollHeight},'fast');
+          })
+
+        .fail(function(){
+          alert('自動更新に失敗しました');
+        })
+      }
+   } else {
+    clearInterval(interval);
+   }
+
+});
