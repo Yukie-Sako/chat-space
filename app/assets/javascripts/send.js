@@ -60,7 +60,6 @@ $(function (){
   })
 
     if(location.pathname.match(/\/groups\/\d+\/messages/)) {
-      console.log("aaa")
      var updateMessage = function (){
         if ($('.message')[0]) {
           var message_id = $('.message:last').data('message-id');
