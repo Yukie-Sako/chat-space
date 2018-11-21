@@ -44,7 +44,6 @@ $(function (){
     })
     .done(function(data){
       var insertHTML = buildHTML(data);
-      console.log(data);
       var mainBarContent = $('.main-bar__content__messages')
       mainBarContent.append(insertHTML)
       mainBarContent.animate({scrollTop: mainBarContent[0].scrollHeight},'fast');
@@ -77,10 +76,6 @@ $(function (){
         })
 
         .done(function(data){
-
-          console.log(data);
-          console.log(message_id);
-
           var insertHTML = "";
             data.forEach(function(message){
             insertHTML += buildHTML(message);
