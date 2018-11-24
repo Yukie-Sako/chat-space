@@ -68,6 +68,10 @@ gem 'mini_magick'
 gem 'faker'
 gem 'carrierwave'
 
+group :production do
+  gem 'unicorn'
+end
+
 
 
 
